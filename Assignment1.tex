@@ -1,0 +1,145 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}  
+\usepackage{tikz}
+\usepackage{circuitikz} 
+\usepackage{caption}
+\def\inputGnumericTable{}              
+\usepackage[latin1]{inputenc}          
+\usepackage{color}                    
+\usepackage{array}                     
+\usepackage{longtable}                 
+\usepackage{calc}                     \usepackage{multirow}                  
+\usepackage{hhline}                    
+\usepackage{ifthen}                    
+\usepackage{lscape}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+
+
+\title{
+%	\logo{
+Analog 12.7.4
+
+\large{EE1205 : Signals and Systems}
+
+Indian Institute of Technology Hyderabad
+%	}
+}
+\author{Chirag Garg
+
+(EE23BTECH11206)
+}	
+
+
+
+
+
+\maketitle
+
+\newpage
+
+
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+%\section{Question 12.7.4}
+
+
+\textbf{Question:} A 60 $\mu$ F capacitor is connected to a 110 V, 60 Hz ac supply. Determine
+the rms value of the current in the circuit.
+
+
+%\section{Solution} 
+\textbf{Solution: }
+\begin{figure}[!h]
+ \centering
+    \input{figas1.tex}
+    \caption*{Fig. 1}
+    \label{fig:enter-label}
+\end{figure}
+\begin{table}[htbp]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tableas1.tex}}
+
+\caption*{Table 1 : Given Parameters}
+\label{tab:my_label}
+\end{table}
+
+Substituting values: \\
+\begin {align}
+X_C = \dfrac{1}{2\pi \times 60 \times 60 \times 10^{-6}} \Omega
+\end{align}
+\begin {align}
+s=j\times2\times\pi\times60 \: T^{-1}
+\end{align}
+The $I_{\text{rms}}$ value is defined as :-
+\begin{align}
+I_{\text{rms}}^2 &= {\dfrac{1}{T} \int_{0}^{T} [I(t)]^2 \, dt} \\
+&= {f \int_{0}^{\frac{1}{f}} I_{\text{0}}^2 \cdot \sin^2(2\pi ft + \phi) \, dt} \\
+&= \dfrac{1}{2} I_{0}^2 \left(1 - \frac{1}{f}\left[\dfrac{\sin(4\pi ft + 2\phi)}{4\pi f}\right]_{0}^{\frac{1}{f}}\right) \\
+&= \dfrac{1}{2} I_{0}^2 \left(1 - \dfrac{1}{f} \cdot \dfrac{\sin\left(4\pi + 2\phi\right) - \sin(0 + 2\phi)}{4\pi f}\right) \\
+&= \dfrac{I_{0}}{\sqrt{2}} 
+\end{align}
+\begin{figure}[htbp]
+ \centering
+    \input{figas2.tex}
+    \caption*{Fig. 2 : Equivalent s domain circuit}
+    \label{fig:enter-label}
+\end{figure} \\
+We know that,
+\begin{align}
+ H(s)&=R + sL + \dfrac{1}{sC}\\
+&=0 + 0 +\dfrac{1}{j \omega C}\\
+&=\dfrac{1}{j \omega C}\\
+\end{align}
+\begin{align}
+ |H(j \omega)| &= \sqrt{ \dfrac{1}{\omega^2 C^2}}\\
+ &= \dfrac{1}{{ (2\pi) \times(60)\times(60) \times (10^{-6})}}\\
+&\approx 44.21\\
+I(s) &= \dfrac{V(s)}{H(s)} \\
+&=\dfrac{110}{44.21} \\
+&\approx 2.49  A
+\end{align}
+
+\end{document}
