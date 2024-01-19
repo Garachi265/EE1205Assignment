@@ -1,0 +1,10 @@
+\begin{circuitikz}
+   \draw (0,3)
+    to[C, C=${\raisebox{0.8ex}{$\dfrac{1}{sC}$}}$] (2,3)
+          to[sV, v=$V(s)$] (6,3);
+    
+    % Draw the horizontal lines to complete the circuit
+    \draw (0,0) -- (6,0);
+    \draw (0,0) -- (0,3);    
+    \draw (6,0) -- (6,3);
+    \end{circuitikz}
