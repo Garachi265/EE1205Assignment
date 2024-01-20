@@ -116,10 +116,11 @@ s=j\times2\times\pi\times60 \: T^{-1}
 The $I_{\text{rms}}$ value is defined as :-
 \begin{align}
 I_{\text{rms}}^2 &= {\dfrac{1}{T} \int_{0}^{T} [I(t)]^2 \, dt} \\
-&= {f \int_{0}^{\frac{1}{f}} I_{\text{0}}^2 \cdot \sin^2(2\pi ft + \phi) \, dt} \\
-&= \dfrac{1}{2} I_{0}^2 \left(1 - \frac{1}{f}\left[\dfrac{\sin(4\pi ft + 2\phi)}{4\pi f}\right]_{0}^{\frac{1}{f}}\right) \\
-&= \dfrac{1}{2} I_{0}^2 \left(1 - \dfrac{1}{f} \cdot \dfrac{\sin\left(4\pi + 2\phi\right) - \sin(0 + 2\phi)}{4\pi f}\right) \\
-&= \dfrac{I_{0}}{\sqrt{2}} 
+&= {f \int_{0}^{\frac{1}{f}} I_{\text{0}}^2 \cdot \sin^2(2\pi ft) \, dt} \\
+&= \dfrac{1}{2} I_{0}^2 \left(1 - \frac{1}{f}\left[\dfrac{\sin(4\pi ft )}{4\pi f}\right]_{0}^{\frac{1}{f}}\right) \\
+&= \dfrac{1}{2} I_{0}^2 \left(1 - \dfrac{1}{f} \cdot \dfrac{\sin\left(4\pi \right) - \sin(0 )}{4\pi f}\right) \\
+&= \dfrac{I_{0}^2}{2} \\
+I_{\text{rms}}&=\dfrac{I_{0}}{\sqrt{2}}
 \end{align}
 \begin{figure}[htbp]
  \centering
@@ -129,9 +130,8 @@ I_{\text{rms}}^2 &= {\dfrac{1}{T} \int_{0}^{T} [I(t)]^2 \, dt} \\
 \end{figure} \\
 We know that,
 \begin{align}
- H(s)&=R + sL + \dfrac{1}{sC}\\
-&=0 + 0 +\dfrac{1}{j \omega C}\\
-&=\dfrac{1}{j \omega C}\\
+ H(s)&= \dfrac{1}{sC}\\
+&=\dfrac{1}{j \omega C}
 \end{align}
 \begin{align}
  |H(j \omega)| &= \sqrt{ \dfrac{1}{\omega^2 C^2}}\\
