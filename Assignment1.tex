@@ -93,25 +93,27 @@ the rms value of the current in the circuit.
 \textbf{Solution: }
 \begin{figure}[!h]
  \centering
-    \input{figas1.tex}
+    \input{figure/figas1.tex}
     \caption*{Fig. 1}
     \label{fig:enter-label}
 \end{figure}
+
 \begin{table}[htbp]
 \centering
 \resizebox{\columnwidth}{!}{
-\input{tableas1.tex}}
+\input{table/tableas1.tex}}
 
 \caption*{Table 1 : Given Parameters}
 \label{tab:my_label}
 \end{table}
-
-Substituting values: \\
-\begin {align}
-X_C = \dfrac{1}{2\pi \times 60 \times 60 \times 10^{-6}} \Omega
+The voltage as a function of time can be given as :
+\begin{align}
+V(t) = V_0 \cos(\omega t)
 \end{align}
-\begin {align}
-s=j\times2\times\pi\times60 \: T^{-1}
+So the current as a function of time will be given as :
+\begin{align}
+I(t) &= V_0 \times \omega C  \cos(\omega t + \dfrac{\pi}{2}) \\
+&=I_0 \sin(\omega t)
 \end{align}
 The $I_{\text{rms}}$ value is defined as :-
 \begin{align}
@@ -124,7 +126,7 @@ I_{\text{rms}}&=\dfrac{I_{0}}{\sqrt{2}}
 \end{align}
 \begin{figure}[htbp]
  \centering
-    \input{figas2.tex}
+    \input{figure/figas2.tex}
     \caption*{Fig. 2 : Equivalent s domain circuit}
     \label{fig:enter-label}
 \end{figure} \\
@@ -134,7 +136,7 @@ We know that,
 &=\dfrac{1}{j \omega C}
 \end{align}
 \begin{align}
- |H(j \omega)| &= \sqrt{ \dfrac{1}{\omega^2 C^2}}\\
+ |H(j \omega)| &= \left|\dfrac{1}{j \omega C}\right|\\
  &= \dfrac{1}{{ (2\pi) \times(60)\times(60) \times (10^{-6})}}\\
 &\approx 44.21\\
 I(s) &= \dfrac{V(s)}{H(s)} \\
